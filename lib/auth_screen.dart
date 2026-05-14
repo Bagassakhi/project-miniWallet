@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_pkl/firebase_from.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
@@ -67,6 +68,17 @@ class _AuthScreenState extends State<AuthScreen> {
             ElevatedButton(onPressed: _register, child: Text("Register")),
             SizedBox(height: 20),
             ElevatedButton(onPressed: _login, child: Text("Login")),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FirebaseFrom()),
+                );
+              },
+              child: Text("Firebase From"),
+            ),
+
             SizedBox(height: 20),
             Text(_message),
           ],
